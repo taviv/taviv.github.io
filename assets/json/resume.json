@@ -1,24 +1,24 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Tzvi Aviv",
+    "label": "Data Science Director",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "tzvika.aviv@gmail.com",
+    "phone": "(416) 944-8366",
+    "url": "https://taviv.github.io/",
+    "summary": "Health Data Science Leader",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "Ulster St",
+      "postalCode": "M5S1E5",
+      "city": "Toronto",
+      "countryCode": "Canada",
+      "region": "Ontario"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "LinkedIn",
+        "username": "tzvi-aviv",
+        "url": "https://www.linkedin.com/in/tzvi-aviv/"
       }
     ]
   },
@@ -49,16 +49,15 @@
     }],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "University of Toronto, Toronto, Canada",
+      "location": "Toronto, Ontario",
+      "url": "https://www.utoronto.ca/",
+      "area": "Medical Genetics",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
+      "startDate": "2000-01-09",
+      "endDate": "2006-01-04",
       "score": "10",
       "courses": [
-        "Theory of Relativity"
       ]
     }
   ],
