@@ -4,7 +4,7 @@
     - name: Full Name
       value: Tzvi Aviv
     - name: Date of Birth
-      value: 14th December 1972
+      value: December 1972
     - name: Languages
       value: English, Hebrew
 
@@ -15,18 +15,13 @@
       institution: University of Toronto, Toronto, Canada
       year: 2006
       description:
-        - Medical Genetics.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
+        - Department of Medical Genetics
+        - title: RNA Recognition by SAM domains
     - title: MBA
       institution: Toronto Metropolitan University, Toronto, Canada
       year: 2016
       description:
-        - Technology Innovation.
-        - Description 2.
+        - Technology Innovation
 
 - title: Experience
   type: time_table
@@ -35,18 +30,17 @@
       institution: Loblaw Companies Limited, Brampton, Ontario, Canada
       year: 2020 - 2023
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
+        - Recruited, mentored, and managed a highly skilled team of data scientists and engineers.
+        - Developed best practices and scalable operating procedures (Python/SQL) for data capture and analysis of 	  epidemiological trends.
+        - Oversaw the development of multiple proof-of-concept machine learning projects including demand 	 	  forecasting by deep sequence modelling, treatment prevalences, and precision medicine treatments.
+
     - title: Founder & CEO
       institution: Dagan-Tech Inc., Toronto, Ontario, Canada
       year: 2017-2020
       description:
-        - Description 1.
-        - Description 2.
+        - Hired, coached, mentored, and motivated talented University of Waterloo students.
+        - Led a research team in data processing and risk modeling using computer vision to identify and segment 	  crops combined with weather patterns analysis to predict crop insurance risks.
+        - Won RFP for video segmentation algorithm using face recognition model for Canada Border Services Agency
 
     - title: Consultant
       institution: IdeaConnection, Laval, QC, Canada.
@@ -55,7 +49,6 @@
     - title: Business Development
       institution: SpineSonics Medical, Toronto, Ontario, Canada
       year: 2015 - 2016
-      description:
 
     - title: Research Associate 
       institution: Hospital for Sick Children, Toronto, Ontario, Canada
@@ -63,30 +56,35 @@
 
 
 
-- title: Honors and Awards
+- title: Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2019
       items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
+        - SR&ED Canada Revenue Agency - R&D Award
+    - year: 2018
       items: 
-        - Max Planck Medal
+        - Next Canada - Pre-seed investment
+    - year: 2017
+      items: 
+        - Syngenta AG AI Challenge - First Place
+    - year: 2016
+      items: 
+        - IdeaConnection - Novel Antimicrobial Technology
 
-- title: Academic Interests
+- title: Health Technology Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Agile Data Science.
       items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Team Managment.
+        - DevOps.
+    - title: Population Health.
       items:
-        - Description 1.
-        - Description 2.
+        - Diabetes.
+        - Hypertension.
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Endurance Sports, Beer Brewing, Trekking and Canoeing.
