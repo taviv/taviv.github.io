@@ -67,22 +67,26 @@
         - Next Canada - Pre-seed investment
     - year: 2017
       items: 
-        - Syngenta AG AI Challenge - First Place
+        - Syngenta AG AI Challenge - Soybean yield prediction
+        - Xinova - Patent for ice generation technology
     - year: 2016
       items: 
-        - IdeaConnection - Novel Antimicrobial Technology
+        - IdeaConnection - Novel Antimicrobial Formulation
+        - Syngenta AG - Source-Sink Relationship Management in Ranunculus
+        - Syngenta AG - High-Throughput, High-Purity Cytoplasmic DNA Isolation
 
-- title: Health Technology Interests
+- title: Professional Interests
   type: nested_list
   contents:
-    - title: Agile Data Science.
+    - title: Agile Data Science
       items: 
-        - Team Managment.
-        - DevOps.
-    - title: Population Health.
+        - Team Managment
+        - DevOps Processes
+    - title: Applied Machine Learning in Health
       items:
-        - Diabetes.
-        - Hypertension.
+        - Optimizing Diabetes medication type and dose
+        - Optimizing Hypertension medication type and dose
+        - Prescision Public Health and Real World Epidemiology
 
 - title: Other Interests
   type: list
