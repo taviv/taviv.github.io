@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Database Structure 
-description: Case Study With Entity-Relationship Diagram
-<!---img: assets/img/erd_pharmacy.png--->
+description: Database Design With Entity-Relationship Diagram
 importance: 1
 category: work
 related_publications: 
@@ -27,7 +26,7 @@ Can we measure the health outcomes of patients and make proper recommendations f
     </div>
 </div>
 <div class="caption">
-    Schematic Entity-Relationship Diagram (ERD) of augmented pharmacy data.
+    Schematic Entity-Relationship Diagram (ERD) of augmented pharmacy data in Lucidchart.
 </div>
 
 ## Architecture Solution
