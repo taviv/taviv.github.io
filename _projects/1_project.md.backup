@@ -2,28 +2,46 @@
 layout: page
 title: Data Architecture 
 description: Case Study With Entity-Relationship Diagram
-img: assets/img/erd_pharmacy.jpg
+img: assets/img/12.jpg
 importance: 1
 category: work
 related_publications: 
 ---
 
-## Synopsis 
-Database design for a ‘Connected Health’ business strategy at an extensive pharmacy network.
- 
-## Situation  
-Recent changes in provincial regulations in Canada enable pharmacists to provide a growing list of medical services including: vaccinations, medical reviews, and treatments for minor ailments, in addition to their traditional role as prescription dispensers. Importantly, primary pharmacy IT systems deployed in the network are decentralized (each pharmacy is an independent unit) and transactional (capturing transactions at the pharmacy and not designed for patient treatments). How may the network pivot rich historical data captured in thousands of pharmacies into a central and patient-centric system that will better support the emerging roles of pharmacists as healthcare providers? How can we support patients receiving treatment in multiple pharmacies? How can we measure the health outcomes of patients and make proper recommendations for products and services? 
+Every data science project starts with data (following a clear goal or strategic objective) has a beautiful feature showcase page.
+It's easy to include images in a flexible 3-column grid format.
+Make your photos 1/3, 2/3, or full width.
 
+To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
+    ---
+    layout: page
+    title: project
+    description: a project with a background image
+    img: /assets/img/12.jpg
+    ---
 
-</div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/pharmacy_erd.jpg" title="database erd" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Schematic Entity-Relationship Diagram (ERD) of pharmacy data.
+    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    This image can also have a caption. It's like magic.
 </div>
 
 You can also put regular text between your rows of images.
