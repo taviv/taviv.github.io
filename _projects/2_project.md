@@ -2,7 +2,7 @@
 layout: page
 title: Clinical Drug Monograph RAG
 description: Retrieval-Augmented Generation over a TNF-alpha inhibitor monograph using Gemini and ChromaDB
-img: assets/img/11.jpg
+img: assets/img/project_rag.svg
 importance: 2
 category: work
 related_publications:

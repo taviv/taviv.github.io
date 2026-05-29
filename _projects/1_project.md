@@ -2,10 +2,10 @@
 layout: page
 title: AI/ML Platform for Canada's Largest Pharmacy Network
 description: Product design and delivery of a patient-centric health data and AI platform at Loblaw Companies
-img: assets/img/12.jpg
+img: assets/img/project_pharmacy.svg
 importance: 1
 category: work
-related_publications: 
+related_publications:
 ---
 
 ## The Problem
