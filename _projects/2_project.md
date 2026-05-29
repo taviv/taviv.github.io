@@ -1,81 +1,46 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Clinical Drug Monograph RAG
+description: Retrieval-Augmented Generation over a TNF-alpha inhibitor monograph using Gemini and ChromaDB
+img: assets/img/11.jpg
 importance: 2
 category: work
-giscus_comments: true
+related_publications:
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## What It Does
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+A Retrieval-Augmented Generation (RAG) pipeline that lets you ask plain-language clinical questions about a drug monograph and get answers grounded strictly in the document. Built over a TNF-alpha inhibitor monograph as a concrete healthcare example.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Sample queries it answers correctly:
+- *What is the initiation dose?*
+- *What are the contraindications?*
+- *What is the most severe potential side effect?*
+- *What doses are available?*
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Why It's Interesting
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+Drug monographs are dense, technical, and long. Clinicians and pharmacists reference them frequently but navigating them is slow. A RAG layer turns a static PDF into an interactive Q&A surface — with answers that cite only what's in the document, not hallucinated general knowledge.
 
+The `task_type` distinction in the Gemini embedding API — `retrieval_document` for indexing, `retrieval_query` for querying — is a meaningful quality lever that most naive RAG implementations miss. The pipeline also uses a character budget on retrieved context to control generation cost, and a grounded prompt that restricts the model to retrieved chunks only.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+## Stack
 
+- **Embeddings:** Google Gemini `gemini-embedding-001` (document + query optimized task types)
+- **Vector store:** ChromaDB (persistent)
+- **Generation:** Gemini 2.5 Flash
+- **Document loading:** LangChain + PyPDF + Google Cloud Storage
+- **Chunking:** RecursiveCharacterTextSplitter (1,000 chars, 100 overlap)
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Notebook
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+The full implementation is available as a Colab-ready notebook:
+
+[View notebook on GitHub](https://github.com/taviv/taviv.github.io/blob/master/assets/jupyter/tnf_rag.ipynb)
+
+## Next Steps
+
+- **Chunking by page first** to avoid splitting mid-sentence across clinical sections
+- **Biomedical embeddings** (MedCPT, BiomedBERT) for better clinical terminology retrieval vs general-purpose Gemini embeddings
+- **Multi-document** extension across a full drug class (all TNF inhibitors) for comparative Q&A
+- **Evaluation layer** with a gold-standard Q&A set to measure retrieval precision and answer accuracy
