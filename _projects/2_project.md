@@ -18,6 +18,17 @@ Sample queries it answers correctly:
 - *What is the most severe potential side effect?*
 - *What doses are available?*
 
+## Pipeline Architecture
+
+<div class="row justify-content-center mt-3 mb-2">
+    <div class="col-12">
+        {% include figure.html path="assets/img/project_rag.svg" title="RAG Pipeline Architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    RAG pipeline: PDF monograph loaded and chunked, embedded with Gemini using task-type-optimized vectors, stored in ChromaDB, and retrieved to ground Gemini 2.5 Flash answers to document content only.
+</div>
+
 ## Why It's Interesting
 
 Drug monographs are dense, technical, and long. Clinicians and pharmacists reference them frequently but navigating them is slow. A RAG layer turns a static PDF into an interactive Q&A surface — with answers that cite only what's in the document, not hallucinated general knowledge.

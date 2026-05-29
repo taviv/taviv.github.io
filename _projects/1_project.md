@@ -18,15 +18,26 @@ Loblaw's 1,300+ pharmacy stores each operated decentralized, transactional dispe
 - How do you build an AI/ML platform that enables data scientists to ship clinical features quickly, safely, and repeatably?
 - How do you do this under PIPEDA, pharmacy regulatory requirements, and enterprise data governance — without making it impossible to move fast?
 
+## Platform Architecture
+
+<div class="row justify-content-center mt-3 mb-2">
+    <div class="col-12">
+        {% include figure.html path="assets/img/project_pharmacy.svg" title="Health Data Platform Architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Platform architecture: data from 1,300+ pharmacy stores, clinical devices, provider registries, and surveys unified in BigQuery, powering NLP, ML, and targeting features.
+</div>
+
 ## What I Built and Owned
 
 As Director, Health Data Products & Services, I was accountable for the product strategy, architecture decisions, team delivery, and outcomes. I led a 10-person cross-functional team (ML engineers, data scientists, product owners, clinical analysts) and owned the roadmap from discovery through production.
 
 The platform's foundation was a unified data architecture built on Google BigQuery, consolidating data from pharmacy transaction systems, public health sources, clinical device vendors, and patient survey platforms into a small set of clean, governed, reusable tables — including a patient identity resolution layer that linked records across stores without a common identifier.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/pharmacy_erd.png" title="Platform data architecture" class="img-fluid rounded z-depth-1" %}
+<div class="row justify-content-center mt-3 mb-2">
+    <div class="col-12">
+        {% include figure.html path="assets/img/pharmacy_erd.png" title="Entity-Relationship Diagram" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
