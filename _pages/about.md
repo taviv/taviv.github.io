@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Data Science Leader
+subtitle: AI Product & Delivery Leader
 
 profile:
   align: right
@@ -17,4 +17,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Analytics leader with 10+ years of experience leading teams in delivering complex analytics products and insights in science, healthcare, and insurance organizations. Crafted the development and implementation of a strategic health analytics and machine learning roadmap at Canada's largest pharmacy network. Before joining Loblaw, led open innovation machine learning projects that received international awards and publications in peer-reviewed journals. Holds a Master of Business Administration (MBA) in Technology Innovation Management from Toronto Metropolitan University and a Ph.D. in Medical Genetics from the University of Toronto.
+AI product and delivery leader with 15+ years taking AI-enabled products from concept to production in regulated healthcare and life sciences environments. At Loblaw Companies, I led product strategy and delivery for an AI/ML platform serving Canada's largest pharmacy network — 1,300+ stores and 10M+ patients — spanning NLP, machine learning, and predictive analytics embedded safely under PIPEDA and enterprise data governance. Before that, as founder and CEO of Dagantech, I built a cloud-native AI company end-to-end: validating the opportunity with customers, shipping a production ML platform, and earning international recognition including first place in the Syngenta AI Challenge.
+
+I hold an MBA in Innovation & Technology Management from Toronto Metropolitan University and a PhD in Medical Genetics from the University of Toronto. My research background — including work at SickKids and publications in Nature and peer-reviewed journals — grounds my judgment on where AI genuinely moves the needle in clinical and regulated settings.
+
+Currently advising health and life sciences clients on AI product strategy, evaluation design, and responsible AI governance.
