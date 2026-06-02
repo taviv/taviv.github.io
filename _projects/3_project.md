@@ -1,81 +1,93 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
-importance: 3
-category: hidden
+title: Cardiometabolic Treatment Trends in Pharmacy Records and Digital Surveys
+description: Precision public health using pharmacy prescription records and digital surveys to map cardiometabolic treatment rates across Canada
+img: assets/img/cardiometabolic_poster_p1.png
+importance: 7
+category: work
+related_publications:
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+*Presented at a national health conference. Authors: John Chau, Jeremy Kardash, Ali Mahmood, Jonathan Erez, Tzvi Aviv — Loblaw Healthcare Data Products and Services.*
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Overview
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Precision public health combines big data and digital methodologies with traditional epidemiology to forecast health risks and improve the quality of services provided to patients. This study used anonymized pharmacy prescription records from Loblaw's network across Canada — processed in compliance with applicable privacy laws and Loblaw's policies — alongside self-reported digital surveys to characterize cardiometabolic treatment trends at scale.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+Cardiometabolic conditions (diabetes, hypertension, hyperlipidemia) represent a large and growing portion of chronic disease burden in Canada. This work establishes treatment prevalence baselines, surfaces geographic variation down to the Forward Sortation Area (FSA) level, and benchmarks pharmacy-derived estimates against Statistics Canada's Canadian Community Health Survey (CCHS).
+
+## Methods
+
+Prescription records were extracted from pharmacies across Canada. Patients were divided into twelve age-sex groups and assigned to FSAs by home address. **Treatment rates** were calculated as:
+
+> (# patients taking cardiometabolic medication) ÷ (total prescription recipients per year) per age-sex group per FSA
+
+Self-reporting digital surveys were fielded in September 2022 and compared to the CCHS ([Statistics Canada, Table 13-10-0096-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310009601)).
+
+---
+
+## Figure 1 — Age-Group Treatment Prevalence by Province (2021)
+
+<div class="row justify-content-center mt-3 mb-2">
+    <div class="col-12">
+        {% include figure.html path="assets/img/cardiometabolic_fig1_4.jpeg" title="Age-Group Treatment Prevalence Rates by Province" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Figure 1. Pharmacy treatment rates for diabetes, hypertension, and dyslipidemia by age group and province (2021). Rates increase sharply with age across all provinces. British Columbia shows consistently lower cardiometabolic treatment rates; Alberta shows notably lower dyslipidemia treatment rates.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+Treatment rates rise steeply with age and are consistently higher in males than females across all three conditions and all provinces. The provincial variation — particularly the lower rates in BC and Alberta — likely reflects a mix of population demographics, prescribing practices, and underlying disease prevalence differences.
 
+---
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+## Figure 2 — Diabetes Treatment Rates per FSA, Ontario (2017–2021)
+
+<div class="row justify-content-center mt-3 mb-2">
+    <div class="col-12">
+        {% include figure.html path="assets/img/cardiometabolic_fig1_3.png" title="Diabetes Treatment Rates per FSA, Ontario 2017-2021" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Figure 2. Histograms of pharmacy-derived diabetes treatment rates among seniors per FSA in Ontario (2017–2021), compared to CCHS provincial estimates (dashed lines). Male rates exceed female rates. The wide spread of FSA-level distributions relative to the CCHS provincial benchmarks highlights significant intra-provincial geographic variation.
 </div>
 
+The FSA-level histograms reveal **large variance in diabetes treatment rates** across Ontario neighbourhoods — far more than aggregate provincial numbers suggest. Male pharmacy-derived rates track above CCHS benchmarks in most years; female rates track closer to or below. This gap may reflect differential medication uptake, access, or undiagnosed disease.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+## Figure 3 — Hypertension Trends from Self-Reported Digital Surveys (September 2022)
+
+<div class="row justify-content-center mt-3 mb-2">
+    <div class="col-12">
+        {% include figure.html path="assets/img/cardiometabolic_fig1_2.png" title="Hypertension Trends from Digital Surveys" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-```
-{% endraw %}
+<div class="caption">
+    Figure 3. Self-reported digital survey results by age-sex group. Left: blood pressure measurement rates (measured, forgot values, not measured). Centre: distribution of reported BP readings by category. Right: location of most recent BP measurement (Doctor/Walk-In, Home, Pharmacy/Grocery, Hospital).
+</div>
+
+Key findings from the survey:
+
+- **Blood pressure monitoring rates** range from ~60% in 18–34 year-olds to ~80% in adults 65+, with the remainder either not measured or unable to recall values
+- **~10% of respondents report uncontrolled blood pressure** (above 140/90 mmHg) — a clinically significant share with direct implications for pharmacist intervention programs
+- **20–40% report taking blood pressure readings at home**, varying by age-sex group — reflecting the growing role of consumer health devices
+- Doctor/Walk-In clinics are the dominant measurement setting, but pharmacy and home measurement are meaningful shares, especially in older cohorts
+
+---
+
+## Conclusions
+
+- Growing trends in cardiometabolic treatment prevalences observed across Canada
+- Treatment rates increase with age and are higher in males across all conditions
+- Lower treatment rates in British Columbia and Alberta warrant further investigation
+- Large FSA-level variance in diabetes treatment rates points to meaningful geographic health inequities
+- A substantial minority of patients have uncontrolled blood pressure or are not being monitored — a direct opportunity for pharmacist-led care programs
+
+## Future Directions
+
+This work supports the broader goal of improving accuracy of pharmacy-based health data models to enable better-targeted services. Next steps include:
+
+- Improving FSA-level models with demographic covariates to disentangle true health variation from access and prescribing differences
+- Linking digital survey data to pharmacy records for longitudinal validation
+- Extending the hypertension survey framework to diabetes and dyslipidemia self-management behaviours
