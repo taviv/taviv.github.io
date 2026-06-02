@@ -7,13 +7,7 @@
     "phone": "(416) 944-8366",
     "url": "https://taviv.github.io/",
     "summary": "Health Data Science Leader",
-    "location": {
-      "address": "Ulster St",
-      "postalCode": "M5S1E5",
-      "city": "Toronto",
-      "countryCode": "Canada",
-      "region": "Ontario"
-    },
+    "location": {},
     "profiles": [
       {
         "network": "LinkedIn",
@@ -49,8 +43,8 @@
     }],
   "education": [
     {
-      "institution": "University of Toronto, Toronto, Canada",
-      "location": "Toronto, Ontario",
+      "institution": "University of Toronto",
+      "location": "",
       "url": "https://www.utoronto.ca/",
       "area": "Medical Genetics",
       "studyType": "PhD",

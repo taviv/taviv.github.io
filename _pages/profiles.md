@@ -13,14 +13,10 @@ profiles:
     image: prof_pic.jpg
     content: about.md
     image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>66 Ulster street</p>
-      <p>Toronto, ON</p>
+    more_info:
   - align: left
     image: prof_pic.jpg
     content: about.md
     image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>66 Ulster street</p>
-      <p>Toronto, ON</p>
+    more_info:
 ---
