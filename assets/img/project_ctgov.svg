@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0d1b2a"/>
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#4a90d9"/></marker>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1abc9c"/></marker>
+    <marker id="a3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#f39c12"/></marker>
+  </defs>
+  <g font-family="monospace" text-anchor="middle">
+    <text x="400" y="34" fill="#7ec8e3" font-size="15" font-weight="bold">ClinicalTrials.gov → ICD-10-CM → Dashboards (serverless, weekly)</text>
+
+    <!-- Source -->
+    <rect x="30" y="150" width="120" height="90" rx="6" fill="#1a2744" stroke="#4a90d9" stroke-width="2"/>
+    <text x="90" y="180" fill="#4a90d9" font-size="11" font-weight="bold">ClinicalTrials</text>
+    <text x="90" y="195" fill="#4a90d9" font-size="11" font-weight="bold">.gov v2 API</text>
+    <text x="90" y="215" fill="#7fb3d3" font-size="9">~224k phased</text>
+    <text x="90" y="228" fill="#7fb3d3" font-size="9">studies</text>
+
+    <!-- Scheduler -->
+    <rect x="200" y="62" width="400" height="34" rx="6" fill="#162032" stroke="#5d8aa8" stroke-width="1.5"/>
+    <text x="400" y="84" fill="#7fb3d3" font-size="10">EventBridge: weekly run (Mon) + monthly reference refresh</text>
+    <line x1="400" y1="96" x2="400" y2="118" stroke="#5d8aa8" stroke-width="1.5" marker-end="url(#a1)"/>
+
+    <!-- Step Functions frame -->
+    <rect x="185" y="120" width="430" height="150" rx="8" fill="none" stroke="#2e5a8e" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <text x="400" y="138" fill="#5d8aa8" font-size="9">Step Functions — Lambda + DuckDB</text>
+
+    <line x1="150" y1="195" x2="200" y2="195" stroke="#4a90d9" stroke-width="2" marker-end="url(#a1)"/>
+    <rect x="205" y="155" width="110" height="80" rx="6" fill="#162032" stroke="#1abc9c" stroke-width="1.5"/>
+    <text x="260" y="180" fill="#1abc9c" font-size="11" font-weight="bold">Fetch</text>
+    <text x="260" y="198" fill="#a9dfbf" font-size="9">incremental</text>
+    <text x="260" y="211" fill="#a9dfbf" font-size="9">since watermark</text>
+    <text x="260" y="224" fill="#a9dfbf" font-size="9">→ NDJSON</text>
+
+    <line x1="315" y1="195" x2="343" y2="195" stroke="#1abc9c" stroke-width="2" marker-end="url(#a2)"/>
+    <rect x="356" y="163" width="104" height="72" rx="6" fill="#162032" stroke="#1abc9c" stroke-width="1"/>
+    <rect x="350" y="157" width="104" height="72" rx="6" fill="#162032" stroke="#1abc9c" stroke-width="1.5"/>
+    <text x="402" y="182" fill="#1abc9c" font-size="11" font-weight="bold">Transform</text>
+    <text x="402" y="200" fill="#a9dfbf" font-size="9">10 in parallel</text>
+    <text x="402" y="213" fill="#a9dfbf" font-size="9">→ Parquet</text>
+
+    <line x1="460" y1="195" x2="488" y2="195" stroke="#1abc9c" stroke-width="2" marker-end="url(#a2)"/>
+    <rect x="495" y="155" width="110" height="80" rx="6" fill="#162032" stroke="#1abc9c" stroke-width="1.5"/>
+    <text x="550" y="180" fill="#1abc9c" font-size="11" font-weight="bold">Build</text>
+    <text x="550" y="198" fill="#a9dfbf" font-size="9">merge + code</text>
+    <text x="550" y="211" fill="#a9dfbf" font-size="9">immutable</text>
+    <text x="550" y="224" fill="#a9dfbf" font-size="9">snapshot</text>
+
+    <!-- Coding tier -->
+    <rect x="185" y="300" width="330" height="150" rx="8" fill="#1b2631" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="350" y="324" fill="#f39c12" font-size="11" font-weight="bold">ICD-10-CM condition coding</text>
+    <text x="350" y="346" fill="#f5cba7" font-size="9">1. MeSH crosswalk (curated, MONDO, UMLS, Wikidata, SNOMED)</text>
+    <text x="350" y="364" fill="#f5cba7" font-size="9">2. Free-text rules + UMLS concept match</text>
+    <text x="350" y="382" fill="#f5cba7" font-size="9">3. Intervention rule (Z23 vaccine trials)</text>
+    <text x="350" y="400" fill="#f5cba7" font-size="9">4. LLM tier: Claude Haiku 4.5 on Bedrock,</text>
+    <text x="350" y="413" fill="#f5cba7" font-size="9">   must quote protocol evidence</text>
+    <text x="350" y="431" fill="#f5cba7" font-size="9">5. MeSH-ancestor fallback · validated vs CMS</text>
+    <line x1="550" y1="235" x2="515" y2="300" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a3)"/>
+
+    <!-- S3 -->
+    <line x1="605" y1="195" x2="640" y2="195" stroke="#4a90d9" stroke-width="2" marker-end="url(#a1)"/>
+    <rect x="645" y="150" width="125" height="90" rx="6" fill="#1a2744" stroke="#4a90d9" stroke-width="2"/>
+    <text x="707" y="178" fill="#4a90d9" font-size="11" font-weight="bold">S3 Parquet</text>
+    <text x="707" y="196" fill="#7fb3d3" font-size="9">curated/ snapshots</text>
+    <text x="707" y="210" fill="#7fb3d3" font-size="9">CURRENT.json</text>
+    <text x="707" y="224" fill="#7fb3d3" font-size="9">pointer</text>
+
+    <!-- Consumers -->
+    <line x1="707" y1="240" x2="707" y2="298" stroke="#4a90d9" stroke-width="2" marker-end="url(#a1)"/>
+    <rect x="555" y="300" width="215" height="70" rx="6" fill="#162032" stroke="#7ec8e3" stroke-width="1.5"/>
+    <text x="662" y="322" fill="#7ec8e3" font-size="11" font-weight="bold">CloudFront dashboards</text>
+    <text x="662" y="340" fill="#a9cce3" font-size="9">Overview · Study Duration · LLM Coding</text>
+    <text x="662" y="356" fill="#a9cce3" font-size="9">/api/query → DuckDB Lambda</text>
+    <rect x="555" y="385" width="215" height="50" rx="6" fill="#162032" stroke="#7ec8e3" stroke-width="1.5"/>
+    <text x="662" y="406" fill="#7ec8e3" font-size="11" font-weight="bold">Glue + Athena</text>
+    <text x="662" y="423" fill="#a9cce3" font-size="9">ad-hoc SQL</text>
+
+    <text x="400" y="482" fill="#5d8aa8" font-size="10">No database · no VPC · nothing running between runs</text>
+  </g>
+</svg>
